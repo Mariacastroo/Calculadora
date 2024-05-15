@@ -82,18 +82,6 @@ public class Main {
                     b = scanner.nextDouble();
                     System.out.println("Resultado: " + calculadora.dividir(a, b));
                     break;
-                case 5:
-                    System.out.print("Digite a base: ");
-                    a = scanner.nextDouble();
-                    System.out.print("Digite o expoente: ");
-                    b = scanner.nextDouble();
-                    System.out.println("Resultado: " + calculadora.potencia(a, b));
-                    break;
-                case 6:
-                    System.out.print("Digite o número: ");
-                    a = scanner.nextDouble();
-                    System.out.println("Resultado: " + calculadora.raizQuadrada(a));
-                    break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
