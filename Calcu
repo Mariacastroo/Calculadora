@@ -1,0 +1,108 @@
+
+import java.util.Scanner;
+
+class CalculadoraCientifica {
+    public double somar(double a, double b) {
+        return a + b;
+    }
+
+    public double subtrair(double a, double b) {
+        return a - b;
+    }
+
+    public double multiplicar(double a, double b) {
+        return a * b;
+    }
+
+    public double dividir(double a, double b) {
+        if (b == 0) {
+            System.out.println("Erro: Divisão por zero!");
+            return Double.NaN;
+        }
+        return a / b;
+    }
+
+    public double potencia(double a, double b) {
+        return Math.pow(a, b);
+    }
+
+    public double raizQuadrada(double a) {
+        if (a < 0) {
+            System.out.println("Erro: Raiz quadrada de número negativo!");
+            return Double.NaN;
+        }
+        return Math.sqrt(a);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        CalculadoraCientifica calculadora = new CalculadoraCientifica();
+
+        while (true) {
+            System.out.println("Escolha a operação: ");
+            System.out.println("1 - Somar");
+            System.out.println("2 - Subtrair");
+            System.out.println("3 - Multiplicar");
+            System.out.println("4 - Dividir");
+            System.out.println("5 - Potência");
+            System.out.println("6 - Raiz Quadrada");
+            System.out.println("7 - Sair");
+            int opcao = scanner.nextInt();
+
+            if (opcao == 7) {
+                break;
+            }
+
+            double a, b;
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o primeiro número: ");
+                    a = scanner.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + calculadora.somar(a, b));
+                    break;
+                case 2:
+                    System.out.print("Digite o primeiro número: ");
+                    a = scanner.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + calculadora.subtrair(a, b));
+                    break;
+                case 3:
+                    System.out.print("Digite o primeiro número: ");
+                    a = scanner.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + calculadora.multiplicar(a, b));
+                    break;
+                case 4:
+                    System.out.print("Digite o primeiro número: ");
+                    a = scanner.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + calculadora.dividir(a, b));
+                    break;
+                case 5:
+                    System.out.print("Digite a base: ");
+                    a = scanner.nextDouble();
+                    System.out.print("Digite o expoente: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + calculadora.potencia(a, b));
+                    break;
+                case 6:
+                    System.out.print("Digite o número: ");
+                    a = scanner.nextDouble();
+                    System.out.println("Resultado: " + calculadora.raizQuadrada(a));
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+        }
+
+        scanner.close();
+    }
+}
